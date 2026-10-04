@@ -9,6 +9,8 @@ message = input("Enter an email or message: ").strip()
 
 if not message:
     print("Please enter a message.")
+elif len(message) < 3:
+    print("Message is too short.")
 else:
     prediction = model.predict([message])[0]
     probability = model.predict_proba([message])[0]
